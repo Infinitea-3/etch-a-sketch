@@ -1,0 +1,21 @@
+.container{
+    display: grid;
+    grid-template: repeat(16,25px)/repeat(16,25px);
+    grid-gap:1px 1px;
+    width: 500px;
+    height: 500px;
+    align-content: center;
+    justify-content: center;
+}
+
+.grid{
+    background-color:lightgray;
+    border-color: black;
+    border-width: 1px;
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
