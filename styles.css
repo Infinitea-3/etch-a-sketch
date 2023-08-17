@@ -1,16 +1,16 @@
 .container{
     display: grid;
-    grid-template: repeat(16,25px)/repeat(16,25px);
+    grid-template: repeat(16, 2fr)/repeat(16, 2fr);
     grid-gap:1px 1px;
-    width: 500px;
     height: 500px;
+    width: 500px;
     align-content: center;
     justify-content: center;
+    margin-bottom: 50px;
 }
 
 .grid{
     background-color:lightgray;
-    border-color: black;
     border-width: 1px;
 }
 

@@ -1,10 +1,7 @@
-
 const container = document.querySelector('.container');
 
-
-function CreateGrid(length){
-    sizeSquared = length * length
-    for (let i = 0; i<(sizeSquared); i++){
+createGrid=()=>{
+    for (let i = 0; i<256; i++){
         const grid = document.createElement('div');
         grid.classList.add('grid');
         container.appendChild(grid);
@@ -12,6 +9,25 @@ function CreateGrid(length){
     }
 }
 
-size = 16
+function removeAllChildNodes(parent){
+    while(parent.firstChild){
+        parent.removeChild(parent.firstChild);
+    }
+}
 
-CreateGrid(size);
+
+const slider = document.querySelector('.slider');
+const rangeValue = document.querySelector('#rangeValue');
+slider.addEventListener('input',function(){
+    removeAllChildNodes(container);
+    console.log(rangeValue);
+    container.setAttribute('style', `grid-template: repeat(${rangeValue},2fr)/repeat(${rangeValue},2fr);`);
+    for (let i=0; i<rangeValue*rangeValue;i++){
+        const grid = document.createElement('div');
+        grid.classList.add('grid');
+        container.appendChild(grid);
+        console.log(i);
+    }
+});
+
+createGrid();
