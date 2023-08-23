@@ -8,6 +8,8 @@ fillGrid=(length)=>{
         grid.classList.add('grid');
         container.appendChild(grid);
     }
+    document.getElementById('container').style.gridTemplateColumns = `repeat(${length}, 1fr)`;
+    document.getElementById('container').style.gridTemplateRows = `repeat(${length}, 1fr)`;
 }
 
 function removeAllChildNodes(parent){
@@ -24,5 +26,5 @@ slider.addEventListener('input',function(){
 });
 
 //Create Initial Grid
-size = 15;
+size = 20;
 fillGrid(size);
