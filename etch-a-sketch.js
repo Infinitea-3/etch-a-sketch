@@ -7,6 +7,14 @@ fillGrid=(length)=>{
         const grid = document.createElement('div');
         grid.classList.add('grid');
         container.appendChild(grid);
+        grid.addEventListener("mousedown",(_)=>{clicked = true})
+        grid.addEventListener("mouseup",(_)=>{clicked = false})
+        grid.addEventListener("mousemove",function(){
+            if(!clicked){
+                return
+            }
+            grid.style.backgroundColor = "black";
+        })
     }
     document.getElementById('container').style.gridTemplateColumns = `repeat(${length}, 1fr)`;
     document.getElementById('container').style.gridTemplateRows = `repeat(${length}, 1fr)`;

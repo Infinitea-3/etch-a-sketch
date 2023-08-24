@@ -1,3 +1,15 @@
+html{
+    font-size: 20px;
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 52px;
+    font-family:'Verdana',sans-serif;
+}
+
 .container{
     display: grid;
     grid-template-columns: repeat(20,1fr);
@@ -5,9 +17,10 @@
     grid-gap:1px 1px;
     height: 500px;
     width: 500px;
-    align-content: center;
-    justify-content: center;
+    margin-top: 40px;
     margin-bottom: 50px;
+    margin-left:auto;
+    margin-right:auto;
 }
 
 .grid{
@@ -15,8 +28,13 @@
     border-width: 1px;
 }
 
-.title{
-    display: flex;
+.sliderTitle{
+    display:flex;
     justify-content: center;
-    margin-bottom: 20px;
+    margin: 0px;
+}
+
+.slider{
+    display:flex;
+    justify-content: center;
 }
