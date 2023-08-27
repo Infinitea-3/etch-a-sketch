@@ -9,9 +9,14 @@
     <body>
         <div class = "title">Etch-A-Sketch</div>
         <div class = "container" id ="container"></div>
-        <div class = "sliderTitle">Grid Size</div>
-        <div class= "slider">
-            <input type="range" min="10" max = "30" value="20" oninput="rangeValue.innerText = this.value"><p id="rangeValue">20</p>
+        <div class= "slidecontainer">
+            <div class = "rightside">
+                <div class = "sliderTitle">Number of Squares</div>
+                <input type="range" min="10" max = "30" value="20" oninput="rangeValue.innerText = this.value" id="rangeValue" class="slider">
+            </div>
+            <div class = "leftside">
+                <input type="color" id="colorpicker">
+            </div>
         </div>
     </body>
 </html>

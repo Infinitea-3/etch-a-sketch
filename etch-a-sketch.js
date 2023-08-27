@@ -1,5 +1,7 @@
 const container = document.querySelector('.container');
 
+const cellColor = document.getElementById('colorpicker');
+
 fillGrid=(length)=>{
     removeAllChildNodes(container);
     fullSize = length * length;
@@ -13,7 +15,7 @@ fillGrid=(length)=>{
             if(!clicked){
                 return
             }
-            grid.style.backgroundColor = "black";
+            grid.style.backgroundColor = cellColor.value;
         })
     }
     document.getElementById('container').style.gridTemplateColumns = `repeat(${length}, 1fr)`;
