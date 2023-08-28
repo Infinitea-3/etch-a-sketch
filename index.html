@@ -10,12 +10,17 @@
         <div class = "title">Etch-A-Sketch</div>
         <div class = "container" id ="container"></div>
         <div class= "slidecontainer">
-            <div class = "rightside">
-                <div class = "sliderTitle">Number of Squares</div>
+            <div class = "leftside">
+                <div class = "sideTitle">Number of Squares</div>
                 <input type="range" min="10" max = "30" value="20" oninput="rangeValue.innerText = this.value" id="rangeValue" class="slider">
             </div>
-            <div class = "leftside">
+            <div class = "center">
+                <div class = "sideTitle">Color Picker</div>
                 <input type="color" id="colorpicker">
+            </div>
+            <div class = "rightside">
+                <button class="button" id = "resetButton">Reset</button>
+                <button class="button" id = "discoButton">Disco Mode</button>
             </div>
         </div>
     </body>
