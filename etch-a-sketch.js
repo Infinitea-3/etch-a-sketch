@@ -1,8 +1,18 @@
 const container = document.querySelector('.container');
-const cellColor = document.getElementById('colorpicker');
+
+//Get A Random Color (For Disco Mode Only)
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
 
 //Fill Grid With Cells, Cells Change Color on Press + Mouse Over
 fillGrid=(length)=>{
+    let clicked = false;
     removeAllChildNodes(container);
     fullSize = length * length;
     for (let i = 0; i<fullSize; i++){
@@ -15,7 +25,16 @@ fillGrid=(length)=>{
             if(!clicked){
                 return
             }
-            grid.style.backgroundColor = cellColor.value;
+            //Random Color If Disco Mode, Selected Color If Not
+            if (discoMode){
+                console.log(getRandomColor());
+                grid.style.backgroundColor = getRandomColor();
+            }
+            else{
+                const cellColor = document.getElementById('colorpicker');
+                console.log(cellColor.value);
+                grid.style.backgroundColor = cellColor.value;
+            }
         })
     }
     document.getElementById('container').style.gridTemplateColumns = `repeat(${length}, 1fr)`;
@@ -47,7 +66,16 @@ document.getElementById('resetButton').onclick = function(){
     fillGrid(rangeValueText);
 };
 
+//Button For Disco Mode
+let discoMode = false;
+const buttonPressed = (e)=>{
+    e.target.classList.toggle("active");
+    discoMode = !discoMode
+}
+const discoButton = document.getElementById("discoButton");
+discoButton.addEventListener("click", buttonPressed);
+
 //Create Initial Grid
-size = 20;
+let size = 20;
 fillGrid(size);
 

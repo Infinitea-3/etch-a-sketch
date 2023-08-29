@@ -1,6 +1,7 @@
 html{
     font-size: 20px;
     background-color: rgb(246, 246, 246);
+    font-family:'Verdana',sans-serif;
 }
 
 .title{
@@ -8,7 +9,6 @@ html{
     justify-content: center;
     margin: 20px;
     font-size: 52px;
-    font-family:'Verdana',sans-serif;
 }
 
 .container{
@@ -18,8 +18,7 @@ html{
     grid-gap:1px 1px;
     height: 500px;
     width: 500px;
-    margin-top: 40px;
-    margin-bottom: 20px;
+    margin: 20px;
     margin-left:auto;
     margin-right:auto;
 }
@@ -40,7 +39,7 @@ html{
     display:flex;
     direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: baseline;
 }
 
 .slider{
@@ -49,19 +48,19 @@ html{
     height: 15px;
     width: 150px;
     border-radius: 10px;  
-    border: 1px solid black;
+    border: 2px solid black;
     cursor: pointer;
     margin-right: 10px;
+    margin-top: 5px;
 }
 .slider::-webkit-slider-thumb {
     appearance: none;
     width: 15px;
     height: 15px;
     border-radius: 50%;
-    border: 1px solid black;
     background: black;
     cursor: pointer;
-  }
+}
 
   .leftside, .center, .rightside{
     display: flex;
@@ -69,10 +68,76 @@ html{
     align-items: center;
     margin-left: 30px;
     margin-right: 30px;
+    font-size: 12pt;
+  }
+
+  #colorpicker{
+    appearance: none;
+    background-color: transparent;
+    height:30px;
+    width:100px;
+    border: none;
+  }
+
+  #colorpicker::-webkit-color-swatch{
+    border-radius: 10px;
+    border: 3px solid #000000;
   }
 
   .button{
-    height:20px;
+    height:25px;
     width: 100px;
-    margin: 5px;
+    margin-top: 4px;
+    border: 2px solid #000000;
+    padding: 0px;
+    border-radius: 10px;
+  }
+
+  .button:hover{
+    background-color:lightgray;
+  }
+
+  .active{
+    animation: glowing 2000ms infinite;
+    border: none;
+    background-color: transparent;
+  }
+
+  @keyframes glowing{
+    0% {
+        box-shadow: 0 0 5px #a80505;
+    }
+    5% {
+        box-shadow: 0 0 6px #a86a05;
+    }
+    10% {
+        box-shadow: 0 0 7px #a8a005;
+    }
+    20% {
+        box-shadow: 0 0 8px #2ba805;
+    }
+    30% {
+        box-shadow: 0 0 9px #055ca8;
+    }
+    40% {
+        box-shadow: 0 0 10px #4c05a8;
+    }
+    50% {
+        box-shadow: 0 0 10px #4c05a8;
+    }
+    60% {
+        box-shadow: 0 0 9px #055ca8;
+    }
+    70% {
+        box-shadow: 0 0 8px #2ba805;
+    }
+    80% {
+        box-shadow: 0 0 7px #a8a005;
+    }
+    90% {
+        box-shadow: 0 0 6px #a86a05;
+    }
+    100% {
+        box-shadow: 0 0 5px #a80505;
+    }
   }
